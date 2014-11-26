@@ -5,19 +5,25 @@ import java.awt.*;
 
 public class MainFrame extends JFrame {
 
-    JTextField priceField;
-    JTextField ibanField;
-    JTextField productTitleField;
-    JTextField productAuthorField;
-    JTextField productEditorField;
-    JButton submitButton;
-    JComboBox productTypeCombo;
+    private JPanel globalPanel;
+
+    private JTextField priceField;
+    private JTextField ibanField;
+    private JTextField productTitleField;
+    private JTextField productAuthorField;
+    private JTextField productEditorField;
+    private JButton submitButton;
+    private JComboBox productTypeCombo;
 
     public MainFrame() {
 
         this.setTitle("Logiciel de caisse v2.0");
         this.setSize(new Dimension(1300, 800));
         this.setVisible(true);
+
+        globalPanel = new JPanel();
+
+        this.setContentPane(globalPanel);
 
         initializeProductInputZone();
     }
