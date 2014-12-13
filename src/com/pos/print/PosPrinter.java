@@ -1,4 +1,4 @@
-package print;
+package com.pos.print;
 
 /**
  * Created by alexandrenguyen on 04/12/14.
