@@ -7,6 +7,11 @@ public class PosPrinter {
 
     private String toPrint;
 
+    public void PosPrinter(String _toPrint) {
+
+        this.toPrint = _toPrint;
+    }
+
     public String getToPrint() {
         return toPrint;
     }
