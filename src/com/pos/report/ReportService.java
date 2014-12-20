@@ -8,7 +8,6 @@ public class ReportService extends Report {
     public void generateProductReport() {
 
 
-
     }
 
 }
