@@ -54,6 +54,7 @@ public class MainFrame extends JFrame {
         this.setTitle("Logiciel de caisse v2.0");
         this.setSize(new Dimension(1300, 800));
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
         this.initializePanels();
 
         initializeProductInputZone();
