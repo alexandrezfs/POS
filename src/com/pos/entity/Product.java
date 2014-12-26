@@ -1,6 +1,9 @@
 package com.pos.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
@@ -11,13 +14,29 @@ import java.sql.Timestamp;
 @Entity
 public class Product {
 
+    @Id
+    @GeneratedValue
     private Long id;
+
+    @Column
     private String code;
+
+    @Column
     private BigDecimal price;
+
+    @Column
     private String title;
+
+    @Column
     private String author;
+
+    @Column
     private String editor;
+
+    @Column
     private Timestamp created_at;
+
+    @Column
     private Timestamp updated_at;
 
     public String getCode() {

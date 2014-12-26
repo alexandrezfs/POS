@@ -1,11 +1,19 @@
 package com.pos.entity;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * Created by alexandrenguyen on 25/12/14.
  */
 public class Store {
 
+    @Id
+    @GeneratedValue
     private Long id;
+
+    @Column
     private String store_name;
 
     public Long getId() {

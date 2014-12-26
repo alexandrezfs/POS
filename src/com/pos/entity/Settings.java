@@ -1,6 +1,9 @@
 package com.pos.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.sql.Timestamp;
 
 /**
@@ -10,10 +13,20 @@ import java.sql.Timestamp;
 @Entity
 public class Settings {
 
+    @Id
+    @GeneratedValue
     private Long id;
+
+    @Column
     private String meta_name;
+
+    @Column
     private String meta_value;
+
+    @Column
     private Timestamp created_at;
+
+    @Column
     private Timestamp updated_at;
 
     public Timestamp getCreated_at() {

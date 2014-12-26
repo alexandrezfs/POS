@@ -1,5 +1,8 @@
 package com.pos.entity;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 
 /**
@@ -7,10 +10,20 @@ import java.math.BigDecimal;
  */
 public class PriceOff {
 
+    @Id
+    @GeneratedValue
     private Long id;
+
+    @Column
     private Transaction transaction;
+
+    @Column
     private String salaryman_name;
+
+    @Column
     private String payment_type;
+
+    @Column
     private BigDecimal amount;
 
     public BigDecimal getAmount() {

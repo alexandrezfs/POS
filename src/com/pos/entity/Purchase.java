@@ -1,6 +1,9 @@
 package com.pos.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
@@ -11,15 +14,35 @@ import java.sql.Timestamp;
 @Entity
 public class Purchase {
 
+    @Id
+    @GeneratedValue
     private Long id;
+
+    @Column
     private Transaction transaction;
+
+    @Column
     private BigDecimal amount;
+
+    @Column
     private String registry_number;
+
+    @Column
     private String payment_type;
+
+    @Column
     private boolean is_convertible;
+
+    @Column
     private ProductType product_type;
+
+    @Column
     private ProductType only_product;
+
+    @Column
     private Timestamp created_at;
+
+    @Column
     private Timestamp updated_at;
 
     public ProductType getOnly_product() {

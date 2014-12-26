@@ -1,6 +1,9 @@
 package com.pos.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.sql.Timestamp;
 
 /**
@@ -10,10 +13,20 @@ import java.sql.Timestamp;
 @Entity
 public class ProductSold {
 
+    @Id
+    @GeneratedValue
     private Long id;
+
+    @Column
     private Product product;
+
+    @Column
     private boolean is_synced;
+
+    @Column
     private Timestamp created_at;
+
+    @Column
     private Timestamp updated_at;
 
     public Timestamp getCreated_at() {

@@ -1,6 +1,9 @@
 package com.pos.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
@@ -11,26 +14,68 @@ import java.sql.Timestamp;
 @Entity
 public class Transaction {
 
+    @Id
+    @GeneratedValue
     private long id;
+
+    @Column
     private BigDecimal gift_card_amount;
+
+    @Column
     private BigDecimal coupon_amount;
+
+    @Column
     private BigDecimal coupon_amount_used;
+
+    @Column
     private BigDecimal exchange_amount;
+
+    @Column
     private BigDecimal exchange_amount_used;
+
+    @Column
     private BigDecimal converted_coupon_exchange;
+
+    @Column
     private BigDecimal priceoff_amount;
+
+    @Column
     private BigDecimal direct_exchange;
+
+    @Column
     private BigDecimal credit_card_amount;
+
+    @Column
     private BigDecimal check_amount;
+
+    @Column
     private BigDecimal cash_amount;
+
+    @Column
     private BigDecimal cash_amount_real;
+
+    @Column
     private BigDecimal cash_amount_emitted;
+
+    @Column
     private BigDecimal cash_amount_emitted_real;
+
+    @Column
     private BigDecimal emitted_coupon_amount;
+
+    @Column
     private BigDecimal total_sold_amount;
+
+    @Column
     private BigDecimal total_bought_amount;
+
+    @Column
     private BigDecimal product_count;
+
+    @Column
     private Timestamp created_at;
+
+    @Column
     private Timestamp updated_at;
 
     public BigDecimal getCash_amount() {

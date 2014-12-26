@@ -1,5 +1,8 @@
 package com.pos.entity;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
@@ -8,15 +11,35 @@ import java.sql.Timestamp;
  */
 public class TransactionCoupon {
 
+    @Id
+    @GeneratedValue
     private long id;
+
+    @Column
     private String coupon_transaction_type;
+
+    @Column
     private Transaction transaction;
+
+    @Column
     private BigDecimal amount;
+
+    @Column
     private String registry_number;
+
+    @Column
     private Product only_product;
+
+    @Column
     private boolean is_convertible;
+
+    @Column
     private Store store;
+
+    @Column
     private Timestamp created_at;
+
+    @Column
     private Timestamp updated_at;
 
     public BigDecimal getAmount() {

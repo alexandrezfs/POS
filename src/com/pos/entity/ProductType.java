@@ -1,6 +1,9 @@
 package com.pos.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
  * Created by alexandrenguyen on 25/12/14.
@@ -9,7 +12,11 @@ import javax.persistence.Entity;
 @Entity
 public class ProductType {
 
+    @Id
+    @GeneratedValue
     private Long id;
+
+    @Column
     private String name;
 
     public Long getId() {
