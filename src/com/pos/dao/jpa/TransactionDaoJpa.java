@@ -7,5 +7,5 @@ import com.pos.dao.TransactionDao;
  */
 public class TransactionDaoJpa implements TransactionDao {
 
-    
+
 }
