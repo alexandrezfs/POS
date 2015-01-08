@@ -3,6 +3,7 @@ package com.pos.gui;
 import javafx.scene.control.ComboBox;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class MainFrame extends JFrame {
@@ -52,15 +53,17 @@ public class MainFrame extends JFrame {
     public MainFrame() {
 
         this.setTitle("Logiciel de caisse v2.0");
-        this.setSize(new Dimension(1300, 800));
-        this.setVisible(true);
+        this.setSize(new Dimension(1000, 800));
         this.setLocationRelativeTo(null);
         this.initializePanels();
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         initializeProductInputZone();
         initializeDirectExchangeInputZone();
         initializePurchaseInputZone();
         initializeDiscountInputZone();
+
+        this.setVisible(true);
     }
 
     private void initializePanels() {
@@ -73,19 +76,42 @@ public class MainFrame extends JFrame {
         totalPanel = new JPanel();
         validPanel = new JPanel();
 
+        productPanel.setLayout(new FlowLayout());
+        productPanel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+        globalPanel.add(productPanel, BorderLayout.NORTH);
+
         this.setContentPane(globalPanel);
     }
 
     private void initializeProductInputZone() {
 
         priceField = new JTextField();
+        priceField.setColumns(4);
+        priceField.setBorder(new TitledBorder("Prix"));
         ibanField = new JTextField();
+        ibanField.setColumns(13);
+        ibanField.setBorder(new TitledBorder("EAN / ISBN / IBAN"));
         productTitleField = new JTextField();
+        productTitleField.setColumns(13);
+        productTitleField.setBorder(new TitledBorder("Titre"));
         productAuthorField = new JTextField();
+        productAuthorField.setBorder(new TitledBorder("Auteur"));
+        productAuthorField.setColumns(13);
         productEditorField = new JTextField();
-        submitButton = new JButton();
+        productEditorField.setBorder(new TitledBorder("Editeur"));
+        productEditorField.setColumns(13);
+        submitButton = new JButton("Valider");
         productTypeCombo = new JComboBox();
+        productTypeCombo.setBorder(new TitledBorder("Type"));
 
+        productPanel.setBorder(new TitledBorder("Ajouter produit"));
+        productPanel.add(priceField);
+        productPanel.add(ibanField);
+        productPanel.add(productTypeCombo);
+        productPanel.add(productTitleField);
+        productPanel.add(productAuthorField);
+        productPanel.add(productEditorField);
+        productPanel.add(submitButton);
     }
 
     private void initializeDirectExchangeInputZone() {
