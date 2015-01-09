@@ -13,9 +13,13 @@ public class MainFrame extends JFrame {
      */
     private JPanel globalPanel;
     private JPanel productPanel;
+    private JPanel midAreaPanel;
     private JPanel directExchangePanel;
+    private JPanel directExchangePanel_box_1;
     private JPanel exchangePanel;
+    private JPanel exchangePanel_box_1;
     private JPanel priceOffPanel;
+    private JPanel priceOffPanel_Box_1;
     private JPanel totalPanel;
     private JPanel validPanel;
 
@@ -70,15 +74,28 @@ public class MainFrame extends JFrame {
 
         globalPanel = new JPanel();
         productPanel = new JPanel();
+
+        midAreaPanel = new JPanel();
         directExchangePanel = new JPanel();
         exchangePanel = new JPanel();
         priceOffPanel = new JPanel();
+
         totalPanel = new JPanel();
         validPanel = new JPanel();
 
+        directExchangePanel_box_1 = new JPanel();
+        exchangePanel_box_1 = new JPanel();
+        priceOffPanel_Box_1 = new JPanel();
+
         productPanel.setLayout(new FlowLayout());
         productPanel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+        midAreaPanel.add(directExchangePanel, BorderLayout.EAST);
+        midAreaPanel.add(exchangePanel, BorderLayout.CENTER);
+        midAreaPanel.add(priceOffPanel, BorderLayout.WEST);
+
         globalPanel.add(productPanel, BorderLayout.NORTH);
+        globalPanel.add(midAreaPanel, BorderLayout.CENTER);
+        globalPanel.add(totalPanel, BorderLayout.SOUTH);
 
         this.setContentPane(globalPanel);
     }
@@ -117,21 +134,62 @@ public class MainFrame extends JFrame {
     private void initializeDirectExchangeInputZone() {
 
         directExchangeAmountField = new JTextField();
+        directExchangeAmountField.setColumns(7);
+        directExchangeAmountField.setBorder(new TitledBorder("Valeur"));
         directExchangeClientField = new JTextField();
+        directExchangeClientField.setColumns(7);
+        directExchangeClientField.setBorder(new TitledBorder("Client"));
+
+        directExchangePanel.setBorder(new TitledBorder("Echange Direct"));
+
+        directExchangePanel_box_1.setLayout(new BoxLayout(directExchangePanel_box_1, BoxLayout.Y_AXIS));
+        directExchangePanel_box_1.add(directExchangeAmountField);
+        directExchangePanel_box_1.add(directExchangeClientField);
+
+        directExchangePanel.add(directExchangePanel_box_1, BorderLayout.WEST);
     }
 
     private void initializePurchaseInputZone() {
 
         couponAmountField = new JTextField();
+        couponAmountField.setColumns(7);
+        couponAmountField.setBorder(new TitledBorder("Valeur"));
         couponIdField = new JTextField();
+        couponIdField.setColumns(7);
+        couponIdField.setBorder(new TitledBorder("Numero"));
         couponStoreCombo = new JComboBox();
+        couponStoreCombo.setBorder(new TitledBorder("Magasin"));
+
+        exchangePanel.setBorder(new TitledBorder("Echange / Achat"));
+
+        exchangePanel_box_1.setLayout(new BoxLayout(exchangePanel_box_1, BoxLayout.Y_AXIS));
+        exchangePanel_box_1.add(couponAmountField);
+        exchangePanel_box_1.add(couponIdField);
+        exchangePanel_box_1.add(couponStoreCombo);
+
+        exchangePanel.add(exchangePanel_box_1, BorderLayout.EAST);
     }
 
     private void initializeDiscountInputZone() {
 
         discountAmountField = new JTextField();
+        discountAmountField.setColumns(7);
+        discountAmountField.setBorder(new TitledBorder("Valeur"));
         discountAmountTypeCombo = new JComboBox();
+        discountAmountTypeCombo.setBorder(new TitledBorder("Type"));
         discountClientField = new JTextField();
+        discountClientField.setColumns(7);
+        discountClientField.setBorder(new TitledBorder("Client"));
+
+        priceOffPanel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+        priceOffPanel.setBorder(new TitledBorder("Remise"));
+
+        priceOffPanel_Box_1.setLayout(new BoxLayout(priceOffPanel_Box_1, BoxLayout.Y_AXIS));
+        priceOffPanel_Box_1.add(discountAmountField);
+        priceOffPanel_Box_1.add(discountAmountTypeCombo);
+        priceOffPanel_Box_1.add(discountClientField);
+
+        priceOffPanel.add(priceOffPanel_Box_1, BorderLayout.WEST);
     }
 
 }
