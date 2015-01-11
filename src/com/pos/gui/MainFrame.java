@@ -54,6 +54,18 @@ public class MainFrame extends JFrame {
     private JTextField discountAmountField;
     private JComboBox discountAmountTypeCombo;
 
+    /*
+    JTables
+     */
+    private JTable productTable;
+    String  productTableTitle[] = {"Prix", "Code", "Type", "Titre", "Auteur", "Editeur", "Edition"};
+    private JTable directExchangeTable;
+    String  directExchangeTableTitle[] = {"Valeur", "Nom client"};
+    private JTable priceOffTable;
+    String  priceOffTableTitle[] = {"Valeur", "Nom"};
+    private JTable couponTable;
+    String  couponTableTitle[] = {"No", "Valeur", "Magasin"};
+
     public MainFrame() {
 
         this.setTitle("Logiciel de caisse v2.0");
