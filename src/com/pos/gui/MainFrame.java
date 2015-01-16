@@ -61,8 +61,8 @@ public class MainFrame extends JFrame {
     String  productTableTitle[] = {"Prix", "Code", "Type", "Titre", "Auteur", "Editeur", "Edition"};
     private JTable directExchangeTable;
     String  directExchangeTableTitle[] = {"Valeur", "Nom client"};
-    private JTable priceOffTable;
-    String  priceOffTableTitle[] = {"Valeur", "Nom"};
+    private JTable discountTable;
+    String  discountTableTitle[] = {"Valeur", "Nom"};
     private JTable couponTable;
     String  couponTableTitle[] = {"No", "Valeur", "Magasin"};
 
@@ -145,6 +145,7 @@ public class MainFrame extends JFrame {
 
     private void initializeDirectExchangeInputZone() {
 
+        directExchangeTable = new JTable();
         directExchangeAmountField = new JTextField();
         directExchangeAmountField.setColumns(7);
         directExchangeAmountField.setBorder(new TitledBorder("Valeur"));
@@ -163,6 +164,7 @@ public class MainFrame extends JFrame {
 
     private void initializePurchaseInputZone() {
 
+        couponTable = new JTable();
         couponAmountField = new JTextField();
         couponAmountField.setColumns(7);
         couponAmountField.setBorder(new TitledBorder("Valeur"));
@@ -184,6 +186,7 @@ public class MainFrame extends JFrame {
 
     private void initializeDiscountInputZone() {
 
+        discountTable = new JTable();
         discountAmountField = new JTextField();
         discountAmountField.setColumns(7);
         discountAmountField.setBorder(new TitledBorder("Valeur"));
