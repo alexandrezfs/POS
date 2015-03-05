@@ -24,6 +24,12 @@ public class MainFrame extends JFrame {
     private JPanel validPanel;
 
     /*
+    MAIN MENU BAR
+     */
+    private JMenuBar mainMenuBar = new JMenuBar();
+    private JMenu reportMenu = new JMenu("Rapports");
+
+    /*
     PRODUCT INPUT ZONE
      */
     private JTextField priceField;
@@ -78,8 +84,16 @@ public class MainFrame extends JFrame {
         initializeDirectExchangeInputZone();
         initializePurchaseInputZone();
         initializeDiscountInputZone();
+        initializeMainMenuBar();
 
         this.setVisible(true);
+    }
+
+    private void initializeMainMenuBar() {
+
+        mainMenuBar.add(reportMenu);
+
+        this.setJMenuBar(mainMenuBar);
     }
 
     private void initializePanels() {
