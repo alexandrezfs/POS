@@ -1,7 +1,5 @@
 package com.pos.gui;
 
-import javafx.scene.control.ComboBox;
-
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
@@ -20,6 +18,9 @@ public class MainFrame extends JFrame {
     private JPanel exchangePanel_box_1;
     private JPanel priceOffPanel;
     private JPanel priceOffPanel_Box_1;
+    private JPanel subTotalPanel;
+    private JPanel subTotalPanel_Box_1;
+    private JPanel subTotalPanel_Box_2;
     private JPanel totalPanel;
     private JPanel validPanel;
 
@@ -59,6 +60,18 @@ public class MainFrame extends JFrame {
     private JTextField discountClientField;
     private JTextField discountAmountField;
     private JComboBox discountAmountTypeCombo;
+
+    /*
+    SUB TOTAL ZONE
+     */
+    private JComboBox paymentTypeCombo;
+    private JTextField discountValue;
+    private JTextField couponValue;
+    private JTextField priceOffValue;
+    private JTextField paymentValue;
+    private JTextField couponValueToReturn;
+    private JTextField cashValueToReturn;
+    private JComboBox paymentTypeToReturn;
 
     /*
     JTables
